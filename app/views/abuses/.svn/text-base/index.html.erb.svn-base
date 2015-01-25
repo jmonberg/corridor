@@ -1,0 +1,15 @@
+<h1>Listing Abuses</h1>
+
+<% @abuses.each do |abuse| %>
+	<p>
+		<p class="abuse_listing_content">
+			<%=h abuse.abused_type %>: <%=h abuse.abused.title %>
+		</p>
+
+	  Reported <span class="abuse_listing_content"><%=h abuse.abuse_count %></span> times.
+		<br/>
+
+	  <%= link_to 'Details', abus_path(abuse) %>
+	</p>
+<% end %>
+<p><%= will_paginate @abuses %></p>

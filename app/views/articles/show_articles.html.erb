@@ -1,0 +1,36 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Improvement Ideas</p>
+  	<p>View proposed ideas for improving the Corridor, organized by goal.  Vote for which ones we should do, and give your comments.</p>
+  	<p>Have your own idea for improvement? <%= link_to "Share it!", new_article_path %></p>
+  </div>
+<% end %>
+
+<h1><%= @category %> Articles</h1>
+
+<div class="listings">
+	<% if @articles.empty? %>
+		<p>No <%= @category %> articles yet...</p><br /><br />
+	<% else %>
+		<% for article in @articles %>
+
+				<h3><%= link_to article.title, article %></h3>
+			  <p class="author">
+					By <%= link_to article.user.display_name, article.user %>,
+					<%= article.created_at.strftime("%B %d, %Y") %>
+				</p>
+			  <span id="article_page_vote_score"><%= article.votes.size %></span> Total Votes</span>
+		<% end %>
+	<% end %>
+	<p><%= will_paginate @articles %></p>
+
+</div><!-- End of listings -->
+
+<% if current_user %>
+	<p class="button"><%= link_to 'Write a new Article', new_article_path %></p>
+<% else %>
+   <p>
+		<span class="button"><%= link_to "Register", new_account_path %></span> or
+		<span class="button"><%= link_to "Log In", new_user_session_path %> to create a new article</span>
+	</p>
+<% end %>

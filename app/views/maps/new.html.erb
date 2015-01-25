@@ -1,0 +1,60 @@
+  <script type="text/javascript">
+    var solomarker;
+    function load() {
+      if (GBrowserIsCompatible()) {
+
+		GEvent.addListener(map, 'click', function(marker,point) {
+                    if (!marker) {
+		    oLat = document.getElementById("map_latitude");
+		    oLat.value = point.y;
+		    oLon = document.getElementById("map_longitude");
+		    oLon.value = point.x;
+		    if (solomarker) { map.removeOverlay(solomarker); }
+		    solomarker = new GMarker(point);
+		    map.addOverlay(solomarker);
+	            }
+                    });
+                    }
+      }
+</script>
+
+<h1>Map a New Opinion </h1>
+<p>Click a point on the map, give us a brief opinion, and let us know if your talking about a highlight of the corridor or a place to improve.</p>
+<% form_for(@map) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.hidden_field :latitude %>
+  </p>
+  <p>
+    <%= f.hidden_field :longitude %>
+  </p>
+  <% if !params[:ref_id] %>
+  <% else %> 
+  <p>
+    <%= f.hidden_field :ref_id, :value => params[:ref_id] %>
+  </p><%end%>
+  <%= render (:partial=>'map') %>
+  <small>Navigate the map with your mouse. You can click and drag the mouse around, and zoom in using the controls on the left.</small>
+  <p>
+    <% if !params[:category] %> 
+	<%= f.label :category, "Category" %>: 
+	<%= select( "map", "category", { "Corridor Highlight" => "highlight", "Needs Improvement" => "improvement"}) %>
+	<% else %>
+	<%= f.hidden_field :category, :value => params[:category] %>
+	<% end %>
+  </p>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment, "cols" => 69, "rows" => 5 %><br />
+    <small>Be passionate and concise. Keep your comments to less than 40 words.</small>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+
+
+
+<%= link_to 'Back', maps_path %>

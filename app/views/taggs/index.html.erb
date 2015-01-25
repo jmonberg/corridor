@@ -1,0 +1,28 @@
+<h1>Listing taggs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Taggable</th>
+    <th>Taggable type</th>
+    <th>User</th>
+    <th>Disabled at</th>
+  </tr>
+
+<% for tagg in @taggs %>
+  <tr>
+    <td><%=h tagg.title %></td>
+    <td><%=h tagg.taggable_id %></td>
+    <td><%=h tagg.taggable_type %></td>
+    <td><%=h tagg.user_id %></td>
+    <td><%=h tagg.disabled_at %></td>
+    <td><%= link_to 'Show', tagg %></td>
+    <td><%= link_to 'Edit', edit_tagg_path(tagg) %></td>
+    <td><%= link_to 'Destroy', tagg, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New tagg', new_tagg_path %>

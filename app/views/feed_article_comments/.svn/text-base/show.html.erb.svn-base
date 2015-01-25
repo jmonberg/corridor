@@ -1,0 +1,18 @@
+<p>
+  <b>Feed article:</b>
+  <%=h @feed_article_comment.feed_article_id %>
+</p>
+
+<p>
+  <b>Author name:</b>
+  <%=h @feed_article_comment.author_name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @feed_article_comment.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_feed_article_comment_path(@feed_article_comment) %> |
+<%= link_to 'Back', feed_article_comments_path %>

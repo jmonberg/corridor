@@ -1,0 +1,2 @@
+module TaggsHelper
+end

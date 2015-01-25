@@ -1,0 +1,12 @@
+<div id="navigation">
+	<div id="navigation_center">
+		<ul>
+			<li><%= link_to 'Improvement Ideas', articles_path, :class => current_url?("articles") %></li>
+			<li><%= link_to 'Corridor News', {:controller=>'news'}, :class => current_url?("news") %></li>
+			<li><%= link_to "What's New", {:controller=>'plog'}, :class => current_url?("plog") %></li>
+			<li><%= link_to 'Share Stories', stories_path, :class => current_url?("stories") %></li>
+			<li><%= link_to 'Map Opinions', maps_path, :class => current_url?("maps") %></li>
+			<li><%= link_to 'Photos', images_path, :class => current_url?("images") %></li>
+		</ul>
+	</div> <!-- End Navigation Center -->
+</div> <!-- End Navigation -->

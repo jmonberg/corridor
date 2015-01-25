@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>
+  	<title>Our Michigan Ave</title>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<meta name="description" content="Michigan Avenue Corridor" />
+  	<meta name="keywords" content="Michigan Ave Corridor, Cooperation, Environmental Sustainability, Business Development, Transportation, Streetscape, Dense Mixed Use" />
+  	<meta name="author" content="Michigan Avenue Corridor Improvement Authority Study Committee" />
+  	<%= stylesheet_link_tag 'styles' %>
+  	<%#= javascript_include_tag 'login' unless current_user %>
+  	<%= javascript_include_tag :defaults %>
+  	<%# For any page-specific stylesheets and scripts: %>
+  	<%= yield :head %>
+  </head>
+
+  <body class="home">
+    <div id="header">
+    	<div id="header_center">
+    		<a href="/"><img id="logo" src="/images/site/logo.png" alt="Our Michigan Ave" /></a>
+    		<div id="skipnav"><%= link_to image_tag('site/skipnav.png', :alt => "Skip to Main Content"), '#maincontent' %></div>
+    		<%= render :partial => 'user_sessions/login' %>
+    	</div> <!-- End Header Center -->
+    	<%= render :partial => 'layouts/navigation' %>
+    </div> <!-- End Header -->
+    <div id="content_wrapper">
+    	<div id="content_center">
+    		<div id="banner"><%= yield :topbar %></div>
+    		<div id="maincontent">
+    			<%= yield %>
+    		</div>
+    		<div id="sidebar">
+    			<p style="color: #285681;"><%= flash[:notice] %></p>
+    			<p style="color: red"><%= flash[:warning] %></p>
+    			<%= yield :sidebar %>
+    		</div> <!-- End Sidebar -->
+    	</div> <!-- End Content Center -->
+    	<img src="/images/site/bottom_shadow.png" alt="" />
+    	<p id="footer_links">
+      	<%= link_to 'Improvement Ideas', articles_path %> | <%= link_to 'Corridor News', :controller=>'news' %> | <%= link_to "What's New", :controller=>'plog' %> | <%= link_to 'Share Stories', stories_path %> | <%= link_to 'Map Opinions', maps_path %> <!--| <%= link_to 'Photos', images_path %>--><br />
+      	<a href="/">Home</a> | <%= link_to 'About', :controller => "site", :action => "about" %>
+    	</p>
+    </div> <!-- End Content Wrapper -->
+  </body>
+</html>

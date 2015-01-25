@@ -1,0 +1,43 @@
+<h2><%= @map.user.display_name %> thinks that...</h2>
+
+<p>
+  <%=h @map.comment %><br />
+  <span class="author">This <%= link_to @map.category, :action => @map.category, :id =>"" %> was posted about <%= 	time_ago_in_words(@map.created_at) %> ago by <%= link_to @map.user.display_name, @map.user %>  <% if current_user.nil? %>
+		<% else %>
+		<% if @map.user_id == current_user.id %>
+			(<%= link_to 'Edit', edit_map_path(@map) %> | <%= link_to 'Remove', @map, :confirm => 'Are you sure?', :method => :delete %>)
+	<% end %> 
+	<% end %>
+	</span>
+</p>
+<% if @map.category == "article" %>
+<span class="button"><a href="/articles/<%= @map.ref_id %>">View corresponding article</a></span>
+<% end %>
+<% if @map.category == "story" %>
+<span class="button"><a href="/stories/<%= @map.ref_id %>">View corresponding story</a></span>
+<% end %><br /><br />
+<% unless @map.ref_id == nil %>
+<%= render (:partial=>'show_map', :locals=>{:data=>"#{@map.id}.xml"}) %>
+<% else %>
+<%= render(:partial=>'map_comments', :locals=>{:data=>"#{@map.id}.xml"}) %>
+<% end%>
+
+<p class="button">
+<% unless current_user.nil? %>
+  <% if @map.user_id == current_user.id %>
+    <%= link_to 'Edit your opinion', edit_map_path(@map) %> or 
+  <% else %>
+  <% end %>
+  <% end %>
+  <%= link_to 'Go back', maps_path %> to the main map
+
+</p>
+
+<h2>Responses to this opinion</h2>
+<%= render :partial => 'comments/comments',  :object => @map %>
+
+<%#= render :partial => 'images/gallery' %>
+
+<%= render :partial => 'taggs/new_tag_form', :object => @map %>
+
+<p><span class="button"></p>

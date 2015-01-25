@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gallery>
+	<info>
+		<name>Michigan Avenue Corridor</name>
+		<type>overview</type>
+	</info>
+	<% for category in @categories do %>
+	<item>
+		<id><%= category %></id>
+		<title><%= category.camelcase %></title>
+		<xml><%= "/taggs/search.xml?term=#{category}" %></xml>
+		<img_count><%= @images[category].size %></img_count>
+	</item>
+	<% end %>
+</gallery>

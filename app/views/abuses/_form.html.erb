@@ -1,0 +1,6 @@
+<div class="report_abuse" id="<%= "report_abuse_#{object.class.to_s.downcase}_#{object.id}" %>">
+	<%= link_to_remote 'Report Abuse', :url => send("abuse_#{object.class.to_s.downcase}_path", object),	
+																		 :method => :put, 
+																		 :confirm => "Are you sure?" %>
+  : Report problems with this <%= object.class.to_s.downcase %>. 
+</div>

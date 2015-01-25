@@ -1,0 +1,41 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/app/views/apositivevotes
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-04-07T18:34:00.616300Z
+181
+penniman2
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+create.rjs
+file
+
+
+
+
+2009-04-07T19:04:01.000000Z
+d0db0ec6c3fb99fc033f63df53a1a58d
+2009-04-07T18:34:00.616300Z
+181
+penniman2
+has-props
+

@@ -1,0 +1,18 @@
+<% content_for :head do %>
+  <%#= stylesheet_link_tag 'qgallery' %>
+  <%#= javascript_include_tag 'qgallery' %>
+<% end %>
+
+<h1>Image Gallery</h1>
+
+<% for image in @images %>
+  <%=link_to image_tag(image.photo.url(:thumbnail), :alt => image.title), image %>
+  
+<% end %>
+
+<% if current_user %>
+<p><%= link_to 'Add your own images', new_image_path %></p>
+<% end %>
+<%= will_paginate @images %>
+
+<%# <div id="gallery"></div> %>

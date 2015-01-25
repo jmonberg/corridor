@@ -1,0 +1,27 @@
+<div id="comments" style="clear:both;">
+	<div id="article_comments">
+		<h2>Comments</h2>
+		  <% for comment in object.comments %>
+      <p>
+        <%= comment.body %><br />
+        <em><small>posted by <%= comment.user.display_name %>  <%= friendly_time comment.created_at %></small></em>
+      </p>
+			<%= render :partial => 'abuses/form', :object => comment %>
+      <% end %>
+	</div>  <!-- End article_comments div -->
+
+	<div id="add_comment">
+		<h3>Add a Comment</h3>
+		<% if current_user %>
+			<% form_for [object, Comment.new] do |f| %>
+			  <p>
+			    <%= f.label :body, "Comment" %><br />
+				  <%= f.text_area :body, :rows => 5 %>
+			  </p>
+			  <p><%= f.submit "Add Comment" %></p>
+			<% end %>
+		<% else %>
+			  You must be logged in to post a comment.
+		<% end %>
+	</div>  <!-- End add_comment div -->
+</div>  <!-- End comments div -->

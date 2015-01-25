@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<info>
+		<id><%= params[:term] %></id>
+		<name><%= params[:term].camelcase %></name>
+		<type>gallery</type>
+	</info>
+	<% for tagg in @taggs %>
+	  <% if tagg.taggable_type == 'Image' %>
+    	<item>
+    		<title><%= tagg.taggable.title %></title>
+    		<file><%= "#{tagg.taggable.photo.url(:big).sub("/", "")}" %></file>
+    	</item>
+  	<% end %>
+	<% end %>
+</content>

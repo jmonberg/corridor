@@ -1,0 +1,6 @@
+<% div_for article_comment do %>
+  <p>
+    <strong>Posted <%= time_ago_in_words(article_comment.created_at) %> ago by <%= h(article_comment.author) %>.</strong><br />
+    <%= h(article_comment.body) %>
+  </p>
+<% end %>  

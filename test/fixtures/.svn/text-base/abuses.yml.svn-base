@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  abused_type: MyString
+  abused_id: 1
+  reporting_user_id: 1
+  notes: MyText
+  abuse_count: 1
+
+two:
+  abused_type: MyString
+  abused_id: 1
+  reporting_user_id: 1
+  notes: MyText
+  abuse_count: 1

@@ -1,0 +1,36 @@
+<h1>Editing story</h1>
+
+<% form_for(@story) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :Title %><br />
+    <%= f.text_field :title %><br />
+	<small>(something memorable)</small>
+  </p>
+  <p>
+    <%= f.label :Neighborhood %><br />
+    <%= f.text_field :location %><br />
+	<small>(e.g., Eastside)</small>
+  </p>
+  <p>
+    <%= f.label :Story %><br />
+    <%= textile_editor 'story', 'body' -%>
+  </p>
+  <p>
+    <%= f.label :Website %><br />
+    <%= f.text_field :url %><br />
+	<small>(do you have a personal webpage?)</small>
+  </p>
+  <p>
+    <%= f.label :Image %><br />
+    <%= f.text_field :image_url %><br />
+	<small>(a link to a picture of yourself)</small>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+	<%= textile_editor_initialize -%>
+<% end %>
+
+<span class="button"><%= link_to 'Show', @story %></span> your story, or <span class="button"><%= link_to 'Go Back', stories_path %></span> to all stories.

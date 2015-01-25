@@ -1,0 +1,2 @@
+page.replace_html 'positivescore', "#{@article.apositivevotes.size}"
+page[:positivescore].visual_effect :highlight

@@ -1,0 +1,55 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/vendor/plugins/paperclip/generators/paperclip
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-04-07T18:19:50.608747Z
+180
+churchza
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+USAGE
+file
+
+
+
+
+2009-04-07T19:04:04.000000Z
+87bdb625493c29355f210a36b7614cb9
+2009-04-07T18:19:50.608747Z
+180
+churchza
+
+paperclip_generator.rb
+file
+
+
+
+
+2009-04-07T19:04:04.000000Z
+5a302d9eb0d775f407350b5810ae6bd2
+2009-04-07T18:19:50.608747Z
+180
+churchza
+
+templates
+dir
+

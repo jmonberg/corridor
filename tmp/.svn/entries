@@ -1,0 +1,40 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/tmp
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-02-16T20:21:18.042778Z
+15
+tc491
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+pids
+dir
+
+cache
+dir
+
+sessions
+dir
+
+sockets
+dir
+

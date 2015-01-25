@@ -1,0 +1,517 @@
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	background: #f9fde9;
+	color: #515151;
+}
+
+#skipnav {
+	position: absolute;
+}
+
+#skipnav img {
+	border: none;
+}
+
+/********************/
+/*****  Header  *****/
+/********************/
+
+#header {
+	height: 103px;
+	background: url(../images/site/header_bg.png) top repeat-x;
+	padding-top: 10px;
+}
+
+#header img {
+	float: left;
+	border: none;
+	margin-bottom: 3px;
+}
+
+#header_center {
+	margin: 0 auto;
+	width: 860px;
+}
+
+/*****************/
+/***** Login *****/
+/*****************/
+
+#login {
+	width: 332px;
+	float: right;
+	font-size: 14px;
+	color: #ffffff;
+}
+
+#login a {
+	color: #ffffff;
+}
+
+#user_field {
+	float: left;
+}
+
+#password_field {
+	float: right;
+}
+
+#user_session_login {
+	border: none;
+	background: #ffffff url(../images/site/user.png) 5px 50% no-repeat;
+	width: 95px;
+	height: 23px;
+	margin-right: 17px;
+	padding-left: 25px;
+	border: 1px solid #212547;
+}
+
+#user_session_password {
+	border: none;
+	background: #ffffff url(../images/site/password.png) 5px 50% no-repeat;
+	width: 95px;
+	height: 23px;
+	padding-left: 25px;
+	border: 1px solid #212547;
+}
+
+#user_session_submit {
+	border: 1px solid #fef5cb;
+	background: url(../images/site/button_bg.png) repeat-x;
+	width: 45px;
+	margin-left: 17px;
+}
+
+/*	These can be removed if we aren't going to use the login bar javascript.
+touched {
+	color: #000000;
+}
+
+.untouched {
+	color: #8f8f8f;
+}*/
+
+/**********************/
+/***** Navigation *****/
+/**********************/
+
+#navigation {
+	clear: both;
+	background: url(../images/site/nav_bg.png) repeat-x;
+	height: 40px;
+	font-size: 18px;
+}
+
+#navigation_center {
+	width: 860px;
+	margin: 0 auto;
+}
+
+#navigation ul {
+	display: inline;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+#navigation li {
+	display: block;
+	float: left;
+	list-style-type: none;
+	background: url(../images/site/divider.png) no-repeat bottom right;
+	padding: 0;
+	margin: 0;
+}
+
+#navigation li a:link, #navigation a:visited {
+	float: left;
+	color: #ffffff;
+	padding: 5px 18px 8px 14px;
+	margin-right: 2px;
+	text-decoration: none;
+}
+
+#navigation li a.active {
+	background: url(../images/site/nav_hover.png) 0 1px repeat-x;
+}
+
+#navigation a:hover {
+	background: url(../images/site/nav_hover.png) 0 1px repeat-x;
+}
+
+/************************/
+/***** Main Content *****/
+/************************/
+
+#content_wrapper {
+	margin: 0 auto;
+	width: 898px;
+}
+
+#content_center {
+	float: left;
+	margin-top: -10px;
+	padding: 0 44px 20px 44px;
+	background: url(../images/site/content_bg.png) repeat-y;
+}
+
+#maincontent {
+	float: left;
+	width: 505px;
+	line-height: 1.5em;
+}
+
+/*******************/
+/***** Sidebar *****/
+/*******************/
+
+#sidebar {
+	float: right;
+	width: 280px;
+	padding-left: 25px;
+}
+
+/******************/
+/***** Banner *****/
+/******************/
+
+#banner {
+	margin: 20px 0 15px 0;
+	width: 814px;
+	height: 160px;
+}
+
+.home #banner {
+	background: url(../images/site/banner_home.png) no-repeat;
+}
+
+#banner_text {
+	width: 260px;
+	padding: 10px 20px 0 0;
+	float: right;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+#banner_text p {
+	margin: 0;
+}
+
+#welcome {
+	font-size: 30px;
+}
+
+/*****************/
+/***** Goals *****/
+/*****************/
+
+#goals_left {
+	float: left;
+	width: 229px;
+	margin-left: 15px;
+}
+
+#goals_right {
+	float: right;
+	width: 229px;
+	margin-left: 15px;
+}
+
+#goals_left p, #goals_right p {
+	margin: 0;
+	font-size: .928em; /* 13px */
+}
+
+#cooperation, #sustainability, #development, #transportation, #streetscape, #dense,
+#takeaction, #readnews, #sharestories, #learnabout, #mapit, #aboutsite {
+	padding-left: 50px;
+	margin-top: 20px;
+}
+
+#images {
+	float: left;
+	padding-right: 25px;
+}
+
+#cooperation{background:url(../images/people.png) top left no-repeat;}
+#sustainability{background:url(../images/tree.png) top left no-repeat;}
+#development{background:url(../images/business.png) top left no-repeat;}
+#transportation{background:url(../images/bike.png) top left no-repeat;}
+#streetscape{background:url(../images/bench.png) top left no-repeat;}
+#dense{background:url(../images/home.png) top left no-repeat;}
+#takeaction{background:url(../images/action.png) top left no-repeat;}
+#readnews{background:url(../images/news.jpg) top left no-repeat;}
+#sharestories{background:url(../images/coffeetime.png) top left no-repeat;}
+#learnabout{background:url(../images/sun.png) top left no-repeat;}
+#mapit{background:url(../images/globe.png) top left no-repeat;}
+#aboutsite{background:url(../images/aboutsite.png) top left no-repeat;}
+
+
+/******************/
+/***** Footer *****/
+/******************/
+
+#footer_links {
+	margin: 0 0 0 44px;
+	color: #515151;
+}
+
+#footer_links a {
+	font-size: 13px;
+	color: #515151;
+}
+
+#footer_links a:hover {
+	color: #000000;
+}
+
+/**********************/
+/****** Elements ******/
+/**********************/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, serif;
+	color: #285681;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 1.5em; /* 24px */
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 1.5em; /* 24px */
+}
+
+h3 {
+	font-weight: normal;
+	font-size: 1.25em; /* 20px */
+	margin-bottom: 0;
+}
+
+/***********************/
+/****** Articles *******/
+/***********************/
+
+.author {
+	font-style: italic;
+	font-size: 0.825em;
+	margin-top: 5px;
+	color: #6a6a6a;
+	margin-bottom: 0;
+}
+
+.date {
+	margin-top: 2px;
+	margin-left: 10px;
+	color: #6a6a6a;
+	font-size: .857em;
+}
+
+#new_article {
+	padding: 5px 0 10px 10px;
+}
+
+#article_body img {
+	margin: 0 20px 5px 0;
+}
+
+.tags {
+	color: #6a6a6a;
+}
+
+.comment {
+	padding: 10px 0 0 0;
+}
+.comment p {
+	margin: 5px;
+}
+
+#article_comments {
+	margin-top: 30px;
+	border-top: 1px dotted #95b84b;
+}
+
+#article_comments h2 {
+	background: url(../images/site/comments.png) 0 50% no-repeat;
+	padding-left: 30px;
+}
+
+#add_comment {
+	padding: 5px 0 10px 20px;
+}
+
+#add_comment h3 {
+	background: url(../images/site/addcomment.png) 0 50% no-repeat;
+	padding-left: 30px;
+}
+
+#comment_body {
+	width: 450px;
+	height: 130px;
+	border: 1px dotted #8f8f8f;
+}
+
+/*******************/
+/****** Links ******/
+/*******************/
+
+a:link, a:visited {
+	color: #285681;
+}
+
+a:hover {
+	color: #000000;
+}
+
+a:active {
+	color: #000000;
+}
+
+.new_article a:link, .new_article a:visited {
+	background: #4b950f url(../images/new_article.gif) bottom left repeat-x;
+	color: #ffffff;
+	padding: 5px;
+	border: 1px solid #333333;
+}
+
+.new_article a:hover {
+	color: #333333;
+}
+
+.edit a:link, .edit a:visited {
+	font-size: .857em; /* 12 px */
+	color: #6a6a6a;
+}
+
+.edit a:hover {
+	color: #f58915;
+}
+	
+/******** Forms *******/
+#new_article, #add_comment{
+    margin: 4px;
+    background-color: #e5efcf;
+}
+#article_title, #article_imglink1, #article_caption1, #article_imglink2, #article_caption2{
+    width: 475px;
+}
+#article_body{
+    width: 475px;
+    height: 300px;
+}
+a.delete_tag {
+	font-size: 10px;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+/******** Adding alternating row colors for tables *******/
+.even { background: #C9E0AF;}
+.odd { background: #FFFFFF; }
+.odd td {
+	padding:5px;
+}
+.even td {
+	padding:5px;
+}
+
+/******** Sitewide button green *******/
+.button a {
+/*	-moz-border-radius-bottomleft:3px;
+	-moz-border-radius-bottomright:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-topright:3px;*/
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #85B109 none repeat scroll 0 0;
+	border: 0 none;
+	color: #ffffff;
+	margin: 0 10px 0 0;
+	padding: 7px 12px;
+	text-decoration: none;
+}
+.button a:hover {
+	background:#285681 none repeat scroll 0 0;
+	color:#fff;
+}
+
+/******** Class Clear ***********/
+.clear {
+	clear:both;
+}
+
+/******* Votes *************************/
+#article_page_vote_score{
+font-weight:bold; 
+color:#f58915; 
+font-size:18px;
+}
+
+#positivevotes {
+display:inline;
+}
+
+#totalvotes {
+display:inline;
+}
+
+#votesentance{
+float:left;
+}
+/*
+#votebuttons{
+margin-top:0px;
+padding-left:5px;
+display:inline;
+float:left;
+}*/
+
+#votebuttons{
+margin-left:5px;
+margin-top:15px;
+float:left;
+
+}
+
+/*#votebuttons input {
+	border: 1px solid black;
+	-moz-border-radius: 3px;
+}*/
+/*
+#voteno{
+float:left;
+margin-top:0px;
+}*/
+
+/************ Report Abuse Partial *************/
+.report_abuse{
+	font-size: .625em; /* 10 px? */
+	background-color: #e5efcf;
+	margin: 4px;
+	padding: 2px 2px 2px 10px;
+}
+
+/************ Abuses Listings *************************/
+.abuse_listing_content {
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+/************Tagged Image Gallery Partial*************/
+#photo_gallery {
+text-align: center;
+}
+
+#rollingpic {
+width: 200px;
+border: 1px solid black
+}
+
+#photo_gallery a, #photo gallery a:visited{
+text-decoration: underline;
+}

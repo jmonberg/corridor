@@ -1,0 +1,111 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-05-06T16:48:28.967303Z
+538
+penniman2
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+test
+dir
+
+app
+dir
+
+log
+dir
+
+Rakefile
+file
+
+
+
+
+2009-03-05T17:40:51.000000Z
+17f2f134da4cd31ea095d5868ca89e86
+2009-02-02T20:32:41.929042Z
+1
+jmonberg
+
+.project
+file
+
+
+
+
+2009-03-05T17:40:51.000000Z
+0599824698a5b0787f22bcc05507f9d6
+2009-02-19T18:30:15.742199Z
+22
+perrine4
+has-props
+
+db
+dir
+
+vendor
+dir
+
+tmp
+dir
+
+Capfile
+file
+
+
+
+
+2009-03-05T17:40:51.000000Z
+d3c3576398a4876c920553b714bc177f
+2009-02-16T20:42:51.121599Z
+16
+tc491
+
+script
+dir
+
+doc
+dir
+
+config
+dir
+
+lib
+dir
+
+.loadpath
+file
+
+
+
+
+2009-03-05T17:40:51.000000Z
+f6875909ef841d761ec32d815510e3c7
+2009-02-19T18:30:15.742199Z
+22
+perrine4
+has-props
+
+public
+dir
+

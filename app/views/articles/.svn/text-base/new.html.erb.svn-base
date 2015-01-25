@@ -1,0 +1,46 @@
+<h1>New Article</h1>
+
+<% if current_user %>
+	<div id="new_article">
+		<% form_for(@article) do |f| %>
+		  <%= f.error_messages %>
+		  <p>
+		    <%= f.label :category, "Category" %><br />
+		    <%= select 'article', 'category', ['Cooperation', 'Environmental Sustainability', 'Business Development', 'Transportation', 'Streetscape', 'Dense Mixed Use' ] %>
+		  </p>
+		  <p>
+		    <%= f.label :title %><br />
+		    <%= f.text_field :title %>
+		  </p>
+		  <p>
+		    <%= f.label :body %><br />
+		    <%= textile_editor 'article', 'body', :size => '72' -%>
+		  </p>
+		  <p>
+		    <%= f.label :imglink1, "First Image URL" %><br />
+		    <%= f.text_field :imglink1 %>
+		  </p>
+		  <p>
+		    <%= f.label :caption1, "First Image Caption" %><br />
+				<%= f.text_field :caption1 %>
+		  </p>
+		  <p>
+		    <%= f.label :imglink2, "Second Image URL" %><br />
+		    <%= f.text_field :imglink2 %>
+		  </p>
+		  <p>
+		    <%= f.label :caption2, "Second Image Caption" %><br />
+				<%= f.text_field :caption2 %>
+		  </p>
+		  <p>
+		    <%= f.submit "Create" %>
+		  </p>
+			<%= textile_editor_initialize -%>
+		<% end %>
+	</div>
+
+<% else %>
+	<p><span class="button"><%= link_to "Register", new_account_path %></span> or <span class="button"><%= link_to "Log In", new_user_session_path %> to create a new story</span></p><p>&nbsp;</p>
+<% end %>
+
+<p><span class="button"><%= link_to 'Back', articles_path %> to the "Take Action" page.</span></p>

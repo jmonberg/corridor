@@ -1,0 +1,40 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/lib/tasks
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-02-24T03:37:41.863343Z
+35
+churchza
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+feeds.rake
+file
+
+
+
+
+2009-03-05T17:40:51.000000Z
+1465b43906545b69282334a8e0214d37
+2009-02-24T03:37:41.863343Z
+35
+churchza
+

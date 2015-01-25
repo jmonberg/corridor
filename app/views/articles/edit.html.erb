@@ -1,0 +1,40 @@
+<h1>Editing article</h1>
+
+		<% form_for(@article) do |f| %>
+		  <%= f.error_messages %>
+		  <p>
+		    <%= f.label :category, "Category" %><br />
+				<%= select 'article', 'category', ['Cooperation', 'Environmental Sustainability', 'Business Development', 'Transportation', 'Streetscape', 'Dense Mixed Use' ] %>
+		  </p>
+		  <p>
+		    <%= f.label :title %><br />
+		    <%= f.text_field :title %>
+		  </p>
+		  <p>
+		    <%= f.label :body %><br />
+		    <%= textile_editor 'article', 'body' -%>
+		  </p>
+		  <p>
+		    <%= f.label :imglink1, "First Image URL" %><br />
+		    <%= f.text_field :imglink1 %>
+		  </p>
+		  <p>
+		    <%= f.label :caption1, "First Image Caption" %><br />
+				<%= f.text_field :caption1 %>
+		  </p>
+		  <p>
+		    <%= f.label :imglink2, "Second Image URL" %><br />
+		    <%= f.text_field :imglink2 %>
+		  </p>
+		  <p>
+		    <%= f.label :caption2, "Second Image Caption" %><br />
+				<%= f.text_field :caption2 %>
+		  </p>
+		  <p>
+		    <%= f.submit "Update" %>
+		  </p>
+			<%= textile_editor_initialize -%>
+		<% end %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>

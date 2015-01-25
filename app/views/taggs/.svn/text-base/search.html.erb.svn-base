@@ -1,0 +1,13 @@
+<h1>Search Tags</h1>
+
+<% form_tag '', :method => :get do %>
+<%= text_field_tag :term, params[:term] %><%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% for tagg in @taggs %>
+
+<p>
+  <%=link_to tagg.taggable.title, tagg.taggable %> | <%= tagg.taggable_type %>
+</p>
+
+<% end %>

@@ -1,0 +1,8 @@
+1. Add to the model's routes line in routes.rb:
+, :has_many => :taggs
+
+2. Paste something like this into the model's show view:
+<%= render :partial => 'taggs/new_tag_form', :object => @feed_article %>
+
+3. Add to the association to the model:
+has_many :taggs, :as => :taggable, :dependent => :destroy

@@ -1,0 +1,18 @@
+<p>
+  <b>Article:</b>
+  <%=h @article_comment.article_id %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @article_comment.author %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @article_comment.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_article_comment_path(@article_comment) %> |
+<%= link_to 'Back', article_comments_path %>

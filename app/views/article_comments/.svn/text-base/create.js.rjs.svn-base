@@ -1,0 +1,3 @@
+page.insert_html :bottom, :article_comments, :partial => @article_comment
+page[@article_comment].visual_effect :highlight
+page[:new_article_comment].reset

@@ -1,0 +1,21 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">What's New</p>
+  	<p>This website is your place to learn and share about the life of Michigan Avenue, a commercial corridor that runs through Lansing and East Lansing, Michigan.</p> 
+  	<p><%= link_to "Sign up", new_account_path %> to share your stories with us!</p>
+  </div>
+<% end %>
+
+<p>
+  View:
+  <%= link_to 'All',      				 :type => nil %> | 
+  <%= link_to 'Articles', 				 :type => 'article' %> | 
+  <%= link_to 'Comments', 				 :type => 'comment' %> | 
+  <%= link_to 'Stories', 					 :type => 'story' %> | 
+  <%= link_to 'External Articles', :type => 'feedarticle' %>
+</p>
+
+<% for event in @totem_events %>
+  <%= render :partial => "plog/#{event.action_type.downcase}", :object => event %>
+<% end %>
+<p><%= will_paginate @totem_events %></p>

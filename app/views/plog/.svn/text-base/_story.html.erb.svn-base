@@ -1,0 +1,3 @@
+<p>
+  <span class="author"><%= story.author %></span> <%= story.body %>: <span class="title">"<%= link_to story.title, story.action %>"</span>
+</p>

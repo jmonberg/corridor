@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @tagg.title %>
+</p>
+
+<p>
+  <b>Taggable:</b>
+  <%=h @tagg.taggable_id %>
+</p>
+
+<p>
+  <b>Taggable type:</b>
+  <%=h @tagg.taggable_type %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @tagg.user_id %>
+</p>
+
+<p>
+  <b>Disabled at:</b>
+  <%=h @tagg.disabled_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_tagg_path(@tagg) %> |
+<%= link_to 'Back', taggs_path %>

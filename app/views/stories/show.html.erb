@@ -1,0 +1,56 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Share Stories</p>
+  	<p>Share something you've experienced or a memory associated with Michigan Avenue, and read other people's stories.</p>
+  	<p><%= link_to "Sign up", new_account_path %> to share your stories with us!</p>
+  </div>
+<% end %>
+
+<div>
+  <h1><%=h @story.title %></h1>
+	<% if @story.user.display_name %>
+		<span class="author">Written by: <%= link_to @story.user.display_name, @story.user %></span>
+	<% else %> 
+		<span class="author"><b>Author:</b> Anonymous</span>
+	<% end %> 
+	<span class="date">Published: <%= @story.created_at.strftime("%B %d, %Y") %></span>
+
+	<% unless @mapz0r.nil? %>
+	  <br /><br /><span class="button"><%= link_to "View on map", '/maps/' + @mapz0r.id.to_s %></span> 
+	<% end %>
+	<% unless @story.location.nil? %>
+		<p><b>Neighborhood: </b> <%= @story.location %></p>
+	<% end %>
+	<% unless @story.image_url.nil? %>
+		<p><img src="<%= @story.image_url %>" width="200px"></p>
+	<% end %>
+</div>
+
+<div>
+	<%=textilize @story.body %>
+	<% unless @story.url == nil || "" %>
+		<p>Read more about this story at: <a href="<%= @story.url %>"><%= @story.url %></p>
+	<% end %>
+</div>
+
+<div style="clear:both">
+  <p class="button">
+		<% unless current_user.nil? %>
+			<% if @story.user_id == current_user.id %>
+		  	<% mapz0r = Map.find_by_ref_id_and_category(@story.id, 'story') %>
+				<% if mapz0r == nil %>
+				  <%= link_to "Map it!", :action => 'new', :controller => 'maps', :ref_id => @story.id, :category => 'story' %>
+				<% else %>
+				  <%= link_to "View on map", '/maps/' + mapz0r.id.to_s %>
+				<% end %>
+				<%= link_to 'Change it', edit_story_path(@story) %>
+				<%= link_to 'Delete it', @story, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %> 
+		<% end %> 
+		<%= link_to 'Back to Stories', stories_path %>
+	</p> 
+
+	<%= render :partial => 'abuses/form',			   :object => @story %>
+	<%#= render :partial => 'images/gallery' %>
+	<%= render :partial => 'taggs/new_tag_form', :object => @story %>
+</div>

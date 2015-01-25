@@ -1,0 +1,17 @@
+<p>
+  <b>Site Name:</b>
+  <%=h @feed.site_name %>
+</p>
+
+<p>
+  <b>Site URL:</b>
+  <%=h @feed.site_url %>
+</p>
+
+<p>
+  <b>Feed URL:</b>
+  <%=h @feed.feed_url %>
+</p>
+
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Back', feeds_path %>

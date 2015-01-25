@@ -1,0 +1,55 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Improvement Ideas</p>
+  	<p>View proposed ideas for improving the Corridor, organized by goal.  Vote for which ones we should do, and give your comments.</p>
+  	<p>Have your own idea for improvement? <%= link_to "Share it!", new_article_path %></p>
+  </div>
+<% end %>
+
+<h1>Improvement Ideas</h1>
+<div id="goals_left">
+	<div id="cooperation">
+		<h2><%= link_to "Cooperation", "/articles/cooperation" %></h2>
+		<p>Governmental and community collaboration; 
+			 public institutions; businesses; 
+			 local organizations; 
+			 residents</p>
+	</div><!-- End of cooperation -->
+
+	<div id="sustainability">
+		<h2><%= link_to "Environmental Sustainability", "/articles/environmental" %></h2>
+		<p>Environmentally sustainable development practices; 
+			 protect wildlife habitat; 
+			 preserve green space; 
+			 conserve energy; 
+			 improve watersheds.</p>
+	</div><!-- End of sustainability -->
+
+	<div id="development">
+		<h2><%= link_to "Business Development", "/articles/business" %></h2>
+		<p>Maximize opportunities for the success and diversity of business opportunities (existing and new) along the corridor.</p>
+	</div><!-- End of development -->
+</div> <!-- End Goals Left -->
+
+<div id="goals_right">
+	<div id="transportation">
+		<h2><%= link_to "Transportation", "/articles/transportation" %></h2>
+		<p>Safe and efficient "multi-modal" transportation network; 
+			 non-motorized access; 
+			 circulation within the corridor.</p>
+	</div><!-- End of transportation -->
+
+	<div id="streetscape">
+		<h2><%= link_to "Streetscape", "/articles/streetscape" %></h2>
+		<p>Improve streetscape and landscape features; 
+			 distinguish the corridor as a destination; 
+			 encourage pedestrian circulation; 
+			 support a vibrant urban experience.</p>
+	</div><!-- End of streetscape -->
+
+	<div id="dense">
+		<h2><%= link_to "Dense Mixed Use", "/articles/densemixeduse" %></h2>
+		<p>Target higher-density residential, mixed-use commercial and recreational development;  
+			 redevelopment in strategic locations to strengthen existing neighborhoods.</p>
+	</div><!-- End of dense -->
+</div> <!-- End Goals Right -->

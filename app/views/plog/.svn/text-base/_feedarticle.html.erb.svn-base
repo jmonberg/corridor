@@ -1,0 +1,3 @@
+<p>
+  <span class="author"><%= feedarticle.author %></span> recently posted <span class="title">"<%= link_to feedarticle.title, [feedarticle.action.feed, feedarticle.action] %>"</span>
+</p>

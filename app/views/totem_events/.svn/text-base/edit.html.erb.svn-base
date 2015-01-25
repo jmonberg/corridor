@@ -1,0 +1,24 @@
+<h1>Editing totem_event</h1>
+
+<% form_for(@totem_event) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :event_type %><br />
+    <%= f.text_field :event_type %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @totem_event %> |
+<%= link_to 'Back', totem_events_path %>

@@ -1,0 +1,77 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Improvement Ideas</p>
+  	<p>View proposed ideas for improving the Corridor, organized by goal.  Vote for which ones we should do, and give your comments.</p>
+  	<p>Have your own idea for improvement? <%= link_to "Share it!", new_article_path %></p>
+  </div>
+<% end %>
+<%= link_to "Back to #{@article.category}", "/articles/#{@article.category.downcase}" %>
+<h1><%=h @article.title %></h1>
+<span class="author">By: <%= link_to @article.user.display_name, @article.user %></span>
+<span class="date">Published: <%= @article.created_at.strftime("%B %d, %Y") %></span>
+
+<% unless @mapz0r.nil? %>
+  <p class="button"><%= link_to "View on map", '/maps/' + @mapz0r.id.to_s %></p> 
+<% end %>
+
+<div class="votes">
+	<p id="votesentance">
+		<span id="positivevotes"><%=h @positivevotes.size %></span> out of 
+		<span id="totalvotes"><%=h @article.votes.size %></span> people think we should do this.
+	</p>
+
+  <!--<% unless @hidevotebuttons %>-->
+	  <span id="votebuttons">
+	    <% form_for [ @article, Vote.new ] do |f| %>
+	    	    Do You?
+	      <%= f.submit 'Yes' %>
+	      <%= f.submit 'No' %>
+	    <% end %>
+	  </span>  	   
+  <!--<% end %>-->
+</div>  <!-- End votes div -->
+
+<div class="clear"></div>
+
+<div id="images">
+  <% unless @article.imglink1.empty? %>
+		<p><a href="<%=h @article.imglink1 %>">
+			<img src="<%=h @article.imglink1 %>" width="200" alt="<%=h @article.caption1 %>" /></a>
+		</p>
+    <p class="caption"><%=h @article.caption1 %></p>
+  <% end %>
+
+  <% unless @article.imglink2.empty? %>
+		<p>
+			<a href="<%=h @article.imglink2 %>">
+			<img src="<%=h @article.imglink2 %>" width="200" alt="<%=h @article.caption2 %>" /></a>
+		</p>
+    <p class="caption"><%=h @article.caption2 %></p>
+	<%end%>
+</div> <!-- End images div -->
+
+<%=textilize @article.body %>
+
+<div style="clear:both">
+  <p class="button">
+		<% unless current_user.nil? %>
+			<% if @article.user_id == current_user.id %>
+				<% if @mapz0r.nil? %>
+		  		<%= link_to "Map it!", :action => 'new', :controller => 'maps', :ref_id => @article.id, :category => 'article' %>
+				<% else %>
+		  		<%= link_to "View on Map", '/maps/' + @mapz0r.id.to_s %>
+				<% end %>
+				<%= link_to 'Edit it', edit_article_path(@article) %>
+				<%= link_to 'Delete it', @article, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %> 
+		<% end %>
+		<% @twitterlink = 'http://twitter.com/home?status=Considering+an+idea+for+Michigan+Ave+improvement+at+http%3A%2F%2Fwww.michiganave.org%2Farticles%2F' + @article.id.to_s + '+%3A+' + CGI.escape(@article.title) %>
+                <%= link_to 'Send to Twitter', @twitterlink %>
+		<%= link_to 'Back to Articles', articles_path %>
+	</p> 
+
+	<%= render :partial => 'abuses/form',			   :object => @article %>
+	<%= render :partial => 'comments/comments',  :object => @article %>
+	<%= render :partial => 'images/gallery' %>
+	<%= render :partial => 'taggs/new_tag_form', :object => @article %>
+</div>

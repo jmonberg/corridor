@@ -1,0 +1,40 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/app/views/news
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-04-30T04:05:40.416642Z
+421
+maierdou
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+index.html.erb
+file
+
+
+
+
+2009-05-06T17:26:03.000000Z
+00015ff5baf1975e0b79c59d4c711cc6
+2009-04-30T04:05:40.416642Z
+421
+maierdou
+

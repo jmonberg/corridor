@@ -1,0 +1,9 @@
+<h3><%=h @abuse.abused_type%>: <%=h @abuse.abused.title %></h3>
+Author: <%=link_to @abuse.abused.user.display_name, @abuse.abused.user %>
+<br/>
+Read the <%= link_to "full #{@abuse.abused_type}", @abuse.abused %>
+<br/>
+Reporting User: <%=h @abuse.reporting_user.display_name %>
+<br/>
+Abuse Reported <span class="abuse_listing_content"><%=h @abuse.abuse_count %></span> times.
+<br/>

@@ -1,0 +1,24 @@
+<h1>Listing feed_article_comments</h1>
+
+<table>
+  <tr>
+    <th>Feed article</th>
+    <th>Author name</th>
+    <th>Body</th>
+  </tr>
+
+<% for feed_article_comment in @feed_article_comments %>
+  <tr>
+    <td><%=h feed_article_comment.feed_article_id %></td>
+    <td><%=h feed_article_comment.author_name %></td>
+    <td><%=h feed_article_comment.body %></td>
+    <td><%= link_to 'Show', feed_article_comment %></td>
+    <td><%= link_to 'Edit', edit_feed_article_comment_path(feed_article_comment) %></td>
+    <td><%= link_to 'Destroy', feed_article_comment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New feed_article_comment', new_feed_article_comment_path %>

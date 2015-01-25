@@ -1,0 +1,117 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/config
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-05-05T11:18:56.355046Z
+526
+churchza
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+locales
+dir
+
+routes.rb
+file
+
+
+
+
+2009-05-06T17:26:03.000000Z
+1498883ae89a8f7cd57c61ff60481024
+2009-05-01T00:11:09.516314Z
+443
+churchza
+
+database.yml
+file
+
+
+
+
+2009-05-06T17:26:03.000000Z
+d5c895a76415bfe47e5907cddaf62518
+2009-05-05T00:59:15.089336Z
+495
+churchza
+
+boot.rb
+file
+
+
+
+
+2009-03-05T17:40:51.000000Z
+9792ccadfdbcc30afb84c8815b81374c
+2009-02-02T20:32:41.929042Z
+1
+jmonberg
+
+config.yml
+file
+
+
+
+
+2009-05-06T17:26:03.000000Z
+de5cc17d0cde2ea88af3de0625451d0a
+2009-05-05T00:59:15.089336Z
+495
+churchza
+
+initializers
+dir
+
+environment.rb
+file
+
+
+
+
+2009-05-06T17:26:03.000000Z
+17101dc6dbb5dfe64bc0f7d443d8c6eb
+2009-05-05T11:18:56.355046Z
+526
+churchza
+
+environments
+dir
+
+deploy.rb
+file
+
+
+
+
+2009-04-29T17:34:33.000000Z
+e1de365a922b8340725b43191383ed66
+2009-05-03T03:42:15.042745Z
+472
+churchza
+
+
+
+
+
+deploy.rb.r404
+deploy.rb.r538
+deploy.rb.mine
+

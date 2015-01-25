@@ -1,0 +1,13 @@
+<h1><%= @feed_article.title %></h1>
+From: <%= @feed_article.feed.site_name %>
+<br/>
+<small><%= friendly_time(@feed_article.date_posted.localtime) %></small><br />
+<p>
+  <%= @feed_article.content %>
+</p>
+<p><%= link_to "Read More", @feed_article.permalink %></p>
+
+
+<%= render :partial => 'comments/comments', :object => @feed_article %>
+<%= render :partial => 'images/gallery' %>
+<%= render :partial => 'taggs/new_tag_form', :object => @feed_article %>

@@ -1,0 +1,54 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/public/docs
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-04-16T03:26:33.796617Z
+227
+peter632
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+conceptual_development_plan.pdf
+file
+
+
+
+
+2009-04-29T16:22:52.000000Z
+096e646627376c398d91b3f2f9617fba
+2009-04-16T03:26:33.796617Z
+227
+peter632
+has-props
+
+corridor_news.pdf
+file
+
+
+
+
+2009-04-29T16:22:53.000000Z
+6d2a5d41abbc400a63831510113b23ca
+2009-04-16T03:26:33.796617Z
+227
+peter632
+has-props
+

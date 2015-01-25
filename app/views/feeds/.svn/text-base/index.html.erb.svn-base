@@ -1,0 +1,16 @@
+<h1>Listing feeds</h1>
+
+<% for feed in @feeds %>
+  <p>
+    <h3><%=link_to feed.site_name, feed.site_url %></h3>
+    <%= link_to 'Feed Articles', feed_feed_articles_path(feed) %> |
+    <%= link_to 'Edit', edit_feed_path(feed) %> |
+    <%= link_to 'Destroy', feed, :confirm => 'Are you sure?', :method => :delete %>
+  </p>
+<% end %>
+
+<br />
+<br />
+<br />
+
+<h4><%= link_to 'New feed', new_feed_path %></h4>

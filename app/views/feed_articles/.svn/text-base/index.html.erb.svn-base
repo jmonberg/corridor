@@ -1,0 +1,13 @@
+<% for article in @feed_articles do %>
+  <p>
+		<h3><%= link_to article.title, feed_feed_article_path(params[:feed_id], article) %></h3>
+		From: <%= article.feed.site_name %>
+		<br/>
+    <small><%= friendly_time(article.date_posted.localtime) %></small>
+		<br />
+    <%= truncate_words(article.content, 75) %> 
+		<br/>
+		<%= link_to '(read more)', feed_feed_article_path(params[:feed_id], article) %>
+  </p>
+<% end %>
+<p><%= will_paginate @feed_articles %></p>

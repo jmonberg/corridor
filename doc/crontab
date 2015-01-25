@@ -1,0 +1,12 @@
+# These are the crontab entries used by the corridor application. These
+# commands are run at the specified times.
+#
+# Log in as tc491 and use "crontab -e" to edit the crontab.
+
+# At 3:25 AM every morning, run the backup_database script to back up the
+# database.
+25 3 * * * /home/tc491/backup_database
+
+# Every hour on the hour, run "rake feeds:update" to grab new content from
+# the RSS feeds.
+0 * * * * cd /home/tc491/tc491-website/corridor/current;rake RAILS_ENV=production feeds:update

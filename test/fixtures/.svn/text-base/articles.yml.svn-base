@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  category: Transportation
+  title: Improve Transportation
+  author: Authormcgee
+  body: This is the transportation body text
+  tags: tag
+  imglink1: www.google.com
+  imglink2: www.yahoo.com
+  caption1: google!
+  caption2: yahoo!
+  votes_count: 2
+
+two:
+  category: Cooperation
+  title: Better Cooperation
+  author: coopnut
+  body: Cooperation body text
+  tags: cooperate
+  imglink1: www.google.com
+  imglink2: www.yahoo.com
+  caption1: google!
+  caption2: yahoo!
+  votes_count: 0
+# promoted:
+#   title: What is a Debugger?
+#   link: http://en.wikipedia.org/wiki/Debugger
+#   user: hillary
+#   votes_count: 5

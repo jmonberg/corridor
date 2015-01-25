@@ -1,0 +1,32 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Share Stories</p>
+  	<p>Share something you've experienced or a memory associated with Michigan Avenue, and read other people's stories.</p>
+  	<p><%= link_to "Sign up", new_account_path %> to share your stories with us!</p>
+  </div>
+<% end %>
+
+<h1>Recent Stories</h1>
+
+<div class="listings"> 
+	<p>
+	<% if current_user %>
+		<span class="button"><%= link_to 'Create a new story', new_story_path %></span>
+	<% else %>
+		<span class="button"><%= link_to "Register", new_account_path %></span> or <span class="button"><%= link_to "Log In", new_user_session_path %> to create a new story</span>
+	<% end %>
+	</p>
+
+	<% for story in @stories %>
+		<h3 style="padding-bottom:5px;"><%= link_to story.title, story %></h3>
+		<p class="author">
+			By <% if story.user.display_name %>
+				<%= link_to story.user.display_name, story.user %>
+			<% else %>
+				<%= "Anonymous" %>
+			<% end %> about <%= time_ago_in_words(story.created_at) %> ago
+		</p>
+	<% end %>
+	<p><%= will_paginate @stories %></p>
+
+</div> <!-- End of listings div-->

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  latitude: 9.99
+  longitude: 9.99
+  category: People
+  user_id: 1
+  comment: This is the first comment for testing purposes!
+
+two:
+  latitude: 8.99
+  longitude: 8.99
+  category: Places
+  user_id: 1
+  comment: This is the second comment for testing purposes!

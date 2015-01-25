@@ -1,0 +1,60 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Map Opinions</p>
+  	<p>See what people are talking about around the Corridor.  Click on a point or category to narrow your search.  Feel passionately about a place?  Add your own opinions!</p>
+  </div>
+<% end %>
+
+<h1>Map of All Opinions</h1>
+
+<p>See what people are talking about around the Corridor.  Click on a point, or category to narrow your search. Feel passionately about something in the corridor? Add your own opinions!</p>
+
+<p>
+<% if current_user %>
+<span class="button"><%= link_to 'Map a new opinion', new_map_path %></span>
+<% else %>
+<span class="button"><%= link_to "Register", new_account_path %></span> or <span class="button"><%= link_to "Log In", new_user_session_path %> to map a opinion</span>
+<% end %>
+</p>
+
+<%= render (:partial=>'map', :locals=>{:data=>"/maps.xml"}) %>
+<br />
+<span class="button"><%= link_to "Highlights", "/maps/highlight/", :action => "highlight" %></span> 
+<span class="button"><%= link_to "Needs Improvement", "/maps/improvement/", :action => "improvement" %></span>
+<span class="button"><%= link_to "Articles", "/maps/article/", :action => "article" %></span>
+<span class="button"><%= link_to "Stories", "/maps/story/", :action => "story" %></span>
+
+<br /><br />
+
+<h2>Recent Opinions</h2>
+<span class="author"><%= page_entries_info @maps_paginate, :entry_name => 'opinions' %></span>
+<% for map in @maps_paginate %>
+	<p style="padding:10px;" class="<%= cycle('odd','even') %>">
+	
+    <%=h map.comment %><br />
+	<span class="author">This <%= link_to map.category, :action => map.category, :id =>"" %> was posted <%= time_ago_in_words(map.created_at) %> ago by <%= link_to map.user.display_name, map.user %>  
+	 <% if current_user.nil? %>
+	
+	
+		<% else %>
+		<% if map.user_id == current_user.id %>
+			(<%= link_to 'Edit', edit_map_path(map) %> | <%= link_to 'Remove', map, :confirm => 'Are you sure?', :method => :delete %>)
+	<% end %> 
+	<% end %>
+		<p><%= link_to "Respond to " + map.user.display_name + "'s opinion", map_path(map) %>
+		
+		<% if map.category == "article" %>
+		 | <a href="/articles/<%= map.ref_id %>">View the corresponding article</a>
+		<% end %>
+		<% if map.category == "story" %>
+		 | <a href="/stories/<%= map.ref_id %>">View the corresponding story</a>
+		<% end %>
+		
+		</p>
+	</span>
+
+	</p>
+<% end %>
+
+<p>
+<%= will_paginate @maps_paginate %>

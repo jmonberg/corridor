@@ -1,0 +1,8 @@
+<h3><%=h abused.title %></h3>
+<% if abused.user.display_name %>
+	<span class="author">Written by: <%= link_to abused.user.display_name, abused.user %></span>
+<% else %> 
+	<span class="author"><b>Author:</b> Anonymous</span>
+<% end %> 
+<span class="date">Published: <%= abused.created_at.strftime("%B %d, %Y") %></span>
+<%=textilize abused.body %>

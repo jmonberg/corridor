@@ -1,0 +1,15 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Corridor News</p>
+  	<p>This website is your place to learn and share about the life of Michigan Avenue, a commercial corridor that runs through Lansing and East Lansing, Michigan.</p> 
+  	<p><%= link_to "Sign up", new_account_path %> to share your stories with us!</p>
+  </div>
+<% end %>
+
+<% for article in @feed_articles do %>
+	<h2><%= link_to article.title, [article.feed, article] %></h2>
+	<span class="author">
+		From: <%= article.feed.site_name %>&nbsp;-&nbsp;<%= friendly_time(article.date_posted.localtime) %>
+	</span>
+<% end %>
+<p><%= will_paginate @feed_articles %></p>

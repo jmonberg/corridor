@@ -1,0 +1,63 @@
+<h1><%= @user.display_name %>'s Profile</h1>
+
+<p><b>Member Since:</b> <%=h @user.created_at.strftime("%B %m, %Y") %></p>
+
+<p><b>Profile:</b> <%=textilize @user.profile %></p>
+
+<% unless current_user.nil? %>
+	<% if current_user.id == @user.id %>
+	<!-- Display the Edit button if the user is looking at their own profile -->
+		<br/>
+		<span class="button">
+			<%= link_to 'Edit My Profile', edit_account_path %>
+		</span>
+		<!-- Display a button to 'Review Abuse Reports' for moderators looking at their own profile  -->
+		<% if current_user.moderator? %>
+			<span class="button">
+				<%= link_to 'Review Reports of Abuse', abuses_path %>
+			</span>
+		<% end %>
+		<br/>
+	<% end %>
+	<br/>
+<% end %>
+
+
+<!-- Display the User's Articles -->
+<h2><%= @user.display_name %>'s Articles</h2>
+<% if @articles.length == 0 %>
+	No articles
+<% else %>
+	<% for article in @articles %>
+		<h3><%= link_to article.title, article %></h3>
+		Project Goal: <%= article.category %><br/>
+		Written: <%= article.updated_at.strftime("%B %d, %Y") %>
+	<% end %>
+<% end %>
+<p><%= will_paginate @articles %></p>
+
+<% unless current_user.nil? %>
+	<% if current_user.id == @user.id %>
+		<p class="button"><%= link_to 'Write a new Article', new_article_path %></p>
+	<% end %>
+<% end %>
+
+<br/>
+
+<!-- Display the User's Stories -->
+<h2><%= @user.display_name %>'s Stories</h2>
+<% if @stories.length == 0 %>
+	No stories
+<% else %>
+	<% for story in @stories %>
+		<h3><%= link_to story.title, story %></h3>
+		Written: <%= story.updated_at.strftime("%B %d, %Y") %>
+	<% end %>
+<% end %>
+<p><%= will_paginate @stories %></p>
+
+<% unless current_user.nil? %>
+	<% if current_user.id == @user.id %>
+		<p class="button"><%= link_to 'Write a new Story', new_story_path %></p>
+	<% end %>
+<% end %>

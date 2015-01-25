@@ -1,0 +1,24 @@
+<h1>Listing totem_events</h1>
+
+<table>
+  <tr>
+    <th>Event type</th>
+    <th>Author</th>
+    <th>Body</th>
+  </tr>
+
+<% for totem_event in @totem_events %>
+  <tr>
+    <td><%=h totem_event.event_type %></td>
+    <td><%=h totem_event.author %></td>
+    <td><%=h totem_event.body %></td>
+    <td><%= link_to 'Show', totem_event %></td>
+    <td><%= link_to 'Edit', edit_totem_event_path(totem_event) %></td>
+    <td><%= link_to 'Destroy', totem_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New totem_event', new_totem_event_path %>

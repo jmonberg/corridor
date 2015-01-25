@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  site_name: Riding Rails
+  site_url: http://rubyonrails.org/
+  feed_url: http://feeds.feedburner.com/RidingRails
+
+two:
+  site_name: MSU Triathlon
+  site_url: http://www.msutriathlon.com/
+  feed_url: 'http://www.msutriathlon.com/index.php?format=feed&type=rss'

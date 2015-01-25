@@ -1,0 +1,21 @@
+<% if @images.length > 0 %>
+  <% content_for :head do %>
+    <%= javascript_include_tag 'sidegallery' %>
+    <script type="text/javascript" charset="utf-8">
+    var imageurls=[];
+    var current_pic = 0;
+    <% for image in @images %>
+      <%= prepare_for_javascript image %>
+    <% end %>
+    </script>
+  <% end %>
+
+  <% content_for :sidebar do %>
+  <h3>Related Photos</h3>
+  <div id="photo_gallery">
+  <a href="" id="image_link"><img src="" id="rollingpic" alt="picture" /></a><br />
+  <a href="javascript:prevPic();">&lt; Back</a>&nbsp;&nbsp; <span id="currentingallery">1</span> of <%= @images.size %>&nbsp;&nbsp;<a href="javascript:nextPic();">Next &gt;</a>
+  </div>
+
+  <% end %>
+<% end %>

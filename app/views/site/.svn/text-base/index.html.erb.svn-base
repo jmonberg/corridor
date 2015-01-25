@@ -1,0 +1,50 @@
+<% content_for :topbar do %>
+  <div id="banner_text">
+  	<p id="welcome">Welcome!</p>
+  	<p>This website is your place to learn and share about the life of Michigan Avenue, a commercial corridor that runs through Lansing and East Lansing, Michigan.</p> 
+  	<p><%= link_to "Sign up", new_account_path %> to share your stories with us!</p>
+  </div>
+<% end %>
+
+<h1>Welcome to the Corridor!</h1>
+
+<p>This website is your place to learn and share about the life of Michigan Avenue, a
+commercial corridor that runs through Lansing and East Lansing, Michigan.  It's sponsored
+by the Michigan Avenue Corridor Improvement Authority and Michigan State University.</p>
+
+<h2>What can I do here?</h2>
+<div id="goals_left">
+	<div id="takeaction">
+		<h3><%= link_to 'Improvement Ideas', articles_path %></h3>
+		<p>Learn about proposed changes to the corridor and the New 
+              Urbanism principles behind them, and suggest your own ideas.</p>
+	</div><!-- End takeaction -->
+   <div id="readnews">
+		<h3><%= link_to 'Corridor News', :controller => 'news' %></h3>
+		<p>Read about what's happening on the Corridor, with stories 
+              from many different sources.</p>
+	</div><!-- End readnews -->
+   <div id="sharestories">
+		<h3><%= link_to 'Share Your Stories', stories_path %></h3>
+		<p>Share your stories of Michigan Avenue: the places and people 
+              that turn a street into a community.</p>
+   </div><!-- End sharestories -->
+</div> <!-- End Goals Left -->
+
+<div id="goals_right">
+	<div id="mapit">
+		<h3><%= link_to 'Map Opinions', maps_path %></h3>
+		<p>It's just a straight line on most maps.  But it's much more
+                  on ours. Share points of interest.</p>
+	</div><!-- End mapit -->
+	<div id="learnabout">
+		<h3><%= link_to 'About the Corridor', :controller => "site", :action => "mac" %></h3>
+		<p>See a list of events and activities happening on and around
+                  the Corridor, and add your own.</p>
+	</div><!-- End learnabout -->
+	<div id="aboutsite">
+		<h3> <%= link_to 'About This Site', :controller => "site", :action => "about" %> </h3>
+		<p>Learn more about the group behind this site, and link to our 
+              favorite websites for the Michigan Avenue Corridor.</p>
+	</div><!-- End aboutsite -->
+</div> <!-- End Goals Right -->

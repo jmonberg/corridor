@@ -1,0 +1,53 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/app/views/layouts
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-05-02T19:56:27.478700Z
+465
+churchza
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+_navigation.html.erb
+file
+
+
+
+
+2009-05-06T17:26:03.000000Z
+c46c4aecf34ad717111a1a3b09b11d46
+2009-05-02T19:56:27.478700Z
+465
+churchza
+
+application.html.erb
+file
+
+
+
+
+2009-05-06T17:26:03.000000Z
+c51b7bd6ad35e9a3e94eb9f08fc90e16
+2009-05-02T19:25:24.296125Z
+464
+churchza
+has-props
+

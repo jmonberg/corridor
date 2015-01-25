@@ -1,0 +1,32 @@
+<h1>Editing tagg</h1>
+
+<% form_for(@tagg) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :taggable_id %><br />
+    <%= f.text_field :taggable_id %>
+  </p>
+  <p>
+    <%= f.label :taggable_type %><br />
+    <%= f.text_field :taggable_type %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :disabled_at %><br />
+    <%= f.datetime_select :disabled_at %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tagg %> |
+<%= link_to 'Back', taggs_path %>

@@ -1,0 +1,68 @@
+<h2><%=h @article.title %></h2>
+<p class="category"><%=h @article.category %></p>
+<p class="author">By: <%=h @article.author || @article.user.display_name  %></p>
+<p class="date">Published: <%= article.created_at.strftime("%d %B %Y") %></p>
+
+<div class="votes">
+	<p id="votesentance">
+	<span id="positivevotes"><%=h @positivevotes.size %></span>
+	out of <span id="totalvotes"><%=h @article.votes.size %></span> people think we should do this.  
+
+	<% unless @hidevotebuttons %>
+		<span id="hidebuttons">
+			Do you?
+			</p>
+			<p id="votebuttons">
+				<span id="voteyes">
+				  <% form_remote_for [ @article, Vote.new ] do |f| %>
+				    <%= f.hidden_field :positive, :value => true %>
+				    <%= f.submit 'Yes' %>
+				  <% end %>
+				</span>
+				<span id="voteno">
+				  <% form_remote_for [ @article, Vote.new ] do |f| %>
+				    <%= f.hidden_field :positive, :value => false %>
+				    <%= f.submit 'No' %>
+				  <% end %>
+				</span>
+			</p>
+		</span>
+	<% else %>
+		</p>
+	<% end %>
+</div>
+
+<div class="clear"></div>
+
+
+
+<div id="images">
+  <% unless @article.imglink1.empty? %>
+		<p><a href="<%=h @article.imglink1 %>">
+			<img src="<%=h @article.imglink1 %>" width="200" alt="<%=h @article.caption1 %>" /></a>
+		</p>
+    <p class="caption"><%=h @article.caption1 %></p>
+  <% end %>
+
+  <% unless @article.imglink2.empty? %>
+		<p>
+			<a href="<%=h @article.imglink2 %>">
+			<img src="<%=h @article.imglink2 %>" width="200" alt="<%=h @article.caption2 %>" /></a>
+		</p>
+    <p class="caption"><%=h @article.caption2 %></p>
+	<%end%>
+</div> <!-- End images div -->
+
+
+<%=textilize @article.body %>
+
+
+<% unless current_user == nil %>
+	<% if current_user.id == article.user.id %>
+		<br />
+		<p class="button">
+			<%= link_to 'Edit your article', edit_article_path(@article) %> &nbsp;or&nbsp;
+			<%= link_to 'Go back', articles_path %> to all articles
+		</p>
+	<% end %>
+<% end %>

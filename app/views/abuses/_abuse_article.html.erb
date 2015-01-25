@@ -1,0 +1,5 @@
+<h2><%=h abused.title %></h2>
+<span class="author">By: <%= h abused.user.display_name %></span>
+<span class="date">Published: <%= abused.created_at.strftime("%B %d, %Y") %></span>
+
+<%= textilize abused.body %>

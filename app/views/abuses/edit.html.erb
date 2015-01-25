@@ -1,0 +1,36 @@
+<h1>Reviewing Abuse Report</h1>
+<%= render :partial => 'abuse_report_header', :abuse => @abuse %>
+
+<b>Moderator:</b>  <%=h @moderator_name %>
+<br/>
+<b>Last Update:</b> <%= friendly_time(@abuse.updated_at) %>
+
+<% form_for(@abuse) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :suspension_status %>
+    <%= f.select :suspension_status, Abuse::ABUSE_STATUSES %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes, :cols => 60, :rows => 5 %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+
+<p class="button">
+	<%= link_to 'Show', @abuse %>
+	<%= link_to 'Back', abuses_path %>
+</p>
+
+<hr>
+
+<% if @partial_name.nil? %>
+	This is an unexpected type of abused item (<%= @abuse.abused_type %>), so we can't display any details.
+<% else %>
+	<%= render @partial_name, :abused => @abuse.abused %>
+<% end %>

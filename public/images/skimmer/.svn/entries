@@ -1,0 +1,54 @@
+8
+
+dir
+538
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor/public/images/skimmer
+svn+ssh://jmonberg@tc491.wide.msu.edu/home/tc491/svn-repos/corridor
+
+
+
+2009-04-23T04:44:13.799688Z
+287
+churchza
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+44ef3937-7494-43f7-b314-609db8ce3369
+
+button_right.gif
+file
+
+
+
+
+2009-04-29T16:22:52.000000Z
+583dd6f35a8ff2bba9a08ccabe969de7
+2009-04-23T04:44:13.799688Z
+287
+churchza
+has-props
+
+mask.png
+file
+
+
+
+
+2009-04-29T16:22:52.000000Z
+2255a81b8476eba0b386bc6484a52155
+2009-04-23T04:44:13.799688Z
+287
+churchza
+has-props
+

@@ -1,0 +1,5 @@
+page.replace_html 'positivevotes', "#{@article.votes.find_all_by_positive(true).size}"
+page.replace_html 'totalvotes', "#{@article.reload.votes.size}"
+page[:votebuttons].visual_effect :fade, :duration => 0.5
+page[:positivevotes].visual_effect :highlight
+page[:totalvotes].visual_effect :highlight 

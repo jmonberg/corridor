@@ -1,0 +1,18 @@
+<p>
+  <b>Event type:</b>
+  <%=h @totem_event.event_type %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @totem_event.author %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @totem_event.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_totem_event_path(@totem_event) %> |
+<%= link_to 'Back', totem_events_path %>

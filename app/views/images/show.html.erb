@@ -1,0 +1,20 @@
+<h2><%=h @image.title %></h2>
+
+<p>
+  Posted by <%= link_to @image.user.display_name, @image.user %>
+</p>
+
+<%= render :partial => 'taggs/new_tag_form', :object => @image %>
+
+
+<%= image_tag @image.photo.url(:big), :width => '480px' %>
+<br />
+
+<p>
+  <% if @image.user == current_user %>
+    <%= link_to 'Delete', @image, :method => :delete, :confirm => "Are you sure?" %> |
+  <% end %>
+  <%= link_to 'Edit', edit_image_path(@image) %> |
+  <%= link_to 'Back', images_path %>
+</p>
+<%= render :partial => 'comments/comments',  :object => @image %>
